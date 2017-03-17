@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="css/admin.css" />
+    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap-theme.css" />
+    <link rel="stylesheet" href="vendor/ionicons/css/ionicons.css" />
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- DataTables CSS -->
+    <link href="vendor/datatables-plugins/dataTables.bootstrap.css" rel="stylesheet" />
+
+    <!-- DataTables Responsive CSS -->
+    <link href="vendor/datatables-responsive/dataTables.responsive.css" rel="stylesheet" />
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title tal:content="page_title">Title Here</title>
+</head>
+
+<body>
+    <div id="wrapper">
+        <div id="sidebar-wrapper" metal:use-macro="/template/adminnav.xhtml/admin_nav"></div>
+        <div id="page-content-wrapper">
+            <div class="page-content">
+                <div class="container">
+                    <div class="row">
+                        <h1 class="" id="adminTitle">Welcome to the admin panel <span tal:content="adminInfo/adminFName">Name</span>.</h1>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">Add Designers</div>
+                                <form method="post" id="add_designer" enctype="multipart/form-data">
+                                    <label>First Name:</label>
+                                    <input placeholder="Designer's first name" type="text" name="designerFName" class="form-control"/>
+                                    <br/>
+                                    <label>Last Name:</label>
+                                    <input placeholder="Designer's last name" type="text" name="designerLName" class="form-control"/>
+                                    <br/>
+                                    <label>Biography:</label>
+                                    <br/>
+                                    <textarea placeholder="Designer's biography" name="designerBio" class="form-control"></textarea>
+                                    <br/>
+                                    <label>Hours / Week:</label>
+                                    <input placeholder="Available hours / week" type="number" name="designerHours" class="form-control"/>
+                                    <br/>
+                                    <label>Price / Hour:</label>
+                                    <input placeholder="Price / hour" type="number" name="designerPrice" class="form-control"/>
+                                    <br/>
+                                    <label>Profile Picture:</label>
+                                    <input type="file" name="designerPlink" class="form-control"/>
+                                    <br/>
+                                    <label>Sample Work Pictures:</label>
+                                    <p><small>Add multiple files by selecting multiple files.</small></p>
+                                    <input type="file" name="designerWlink[]" multiple="multiple" class="form-control"/>
+                                    <br/>
+                                    <button type="submit" value="submit" name="btn-add" class="button btnPrimary">Submit</button>
+                                    <button type="reset" value="reset" class="button btnPrimary">Reset</button>
+                                </form>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">Edit Designers</div>
+                                <form method="post" enctype="multipart/form-data" id="edit_designer">
+                                    <label>First Name:</label>
+                                    <input placeholder="Designer's first name" type="text" name="editFName" class="form-control"/>
+                                    <br/>
+                                    <label>Last Name:</label>
+                                    <input placeholder="Designer's last name" type="text" name="editLName" class="form-control"/>
+                                    <br/>
+                                    <label>Biography:</label>
+                                    <br/>
+                                    <textarea placeholder="Designer's biography" name="editBio" class="form-control"></textarea>
+                                    <br/>
+                                    <label>Hours / Week:</label>
+                                    <input placeholder="Available hours / week" type="number" name="editHours" class="form-control"/>
+                                    <br/>
+                                    <label>Price / Hour:</label>
+                                    <input placeholder="Price / hour" type="number" name="editPrice" class="form-control"/>
+                                    <br/>
+                                    <label>Profile Picture:</label>
+                                    <input type="file" name="editPlink" class="form-control"/>
+                                    <br/>
+                                    <p><small>Previous Profile Picture:</small></p>
+                                    <div id="prevProfilePic"></div>
+                                    <br/>
+                                    <label>Sample Work Pictures:</label>
+                                    <p><small>Add multiple files by selecting multiple files.</small></p>
+                                    <input type="file" name="editWlink[]" multiple="multiple" class="form-control"/>
+                                    <br/>
+                                    <p><small>Previous Sample Work Picture:</small></p>
+                                    <div id="prevWorkPic"></div>
+                                    <br/>
+                                    <button type="submit" value="submit" name="btn-add" class="button btnPrimary">Submit</button>
+                                    <button type="reset" value="reset" class="button btnPrimary">Reset</button>
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <div class="row">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">Designer List</div>
+                            <div class="panel-body">
+                                <table id="designer-table" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
+                                    <thead>
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Portrait</th>
+                                            <th>Biography</th>
+                                            <th>Hours / Week</th>
+                                            <th>Price / Hour</th>
+                                            <th>Portfolio Pictures</th>
+                                            <th>Manage</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="designerTable">
+                                        <tr tal:replace="">
+                                            <td>Andrew Park</td>
+                                            <td>
+                                                <img src="https://cdn2.iconfinder.com/data/icons/ios-7-icons/50/user_male2-512.png" alt="TempImg" />
+                                            </td>
+                                            <td>I love to design.</td>
+                                            <td class="center">50</td>
+                                            <td class="center">12.00</td>
+                                            <td class="center">
+                                                <img src="http://www.canoesongs.ca/wp-content/uploads/2016/12/Interior-Designer.jpg" alt="TempImg" />
+                                                <img src="http://www.canoesongs.ca/wp-content/uploads/2016/12/Interior-Designer.jpg" alt="TempImg" />
+                                                <img src="http://www.canoesongs.ca/wp-content/uploads/2016/12/Interior-Designer.jpg" alt="TempImg" />
+                                            </td>
+                                            <td>
+                                                <button>Edit</button>
+                                                <button>Delete</button>
+                                            </td>
+                                        </tr>
+                                        <tr tal:replace="">
+                                            <td>Aaran Manansala</td>
+                                            <td>
+                                                <img src="https://cdn2.iconfinder.com/data/icons/ios-7-icons/50/user_male2-512.png" alt="TempImg" />
+                                            </td>
+                                            <td>I also love to design.</td>
+                                            <td class="center">60</td>
+                                            <td class="center">12.00</td>
+                                            <td class="center">
+                                                <img src="http://www.canoesongs.ca/wp-content/uploads/2016/12/Interior-Designer.jpg" alt="TempImg" />
+                                                <img src="http://www.canoesongs.ca/wp-content/uploads/2016/12/Interior-Designer.jpg" alt="TempImg" />
+                                                <img src="http://www.canoesongs.ca/wp-content/uploads/2016/12/Interior-Designer.jpg" alt="TempImg" />
+                                            </td>
+                                            <td>
+                                                <button>Edit</button>
+                                                <button>Delete</button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.js"></script>
+    <script src="vendor/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="vendor/datatables-plugins/dataTables.bootstrap.min.js"></script>
+    <script src="vendor/datatables-responsive/dataTables.responsive.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+
+</html>

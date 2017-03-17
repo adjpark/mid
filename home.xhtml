@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="css/home.css" />
+    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap-theme.css" />
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title tal:content="page_title">Title Here</title>
+</head>
+
+<body>
+    <div metal:use-macro="/template/nav.xhtml/nav_bar"></div>
+
+    <div class="container" id="designerPanels">
+        <div tal:repeat="designerInfo designers">
+            <a class="popupAnchor" data-popup-open="" href="#">
+                <div class="designer col-sm-4">
+                    <div class="panel panel-default designer">
+                        <div class="panel-body">
+                            <img class="profilePic" src="http://placehold.it/350x350" tal:attributes="src designerInfo/plink" alt="plink" />
+                        </div>
+                        <div class="panel-footer">
+                            <h3 class="panel-title">
+                                <span tal:content="designerInfo/fName"></span>
+                                <span tal:content="designerInfo/lName"></span>
+                            </h3>
+                        </div>
+                    </div>
+
+                </div>
+            </a>
+            <div class="popup" data-popup="">
+                <div class="popup-inner">
+                    <h2>
+                        <span tal:content="designerInfo/fName"></span>
+                        <span tal:content="designerInfo/lName"></span>
+                    </h2>
+                    <p tal:content="designerInfo/bio">Donec in volutpat nisi. In quam lectus, aliquet rhoncus cursus a, congue et arcu.</p>
+                    <label>Hourly Rate:</label>
+                    <p tal:content="designerInfo/price"></p>
+                    <label>Available Hours:</label>
+                    <p tal:content="designerInfo/hours"></p>
+                    <label>Past Projects:</label>
+                    <br/>
+                    <img class="workPic" tal:attributes="src wlink" tal:repeat="wlink designerInfo/wlink" alt="wlink"/>
+                    <br/>
+                    <button tal:attributes="data-designer-id designerInfo/id" class="button btnPrimary">Add to Cart</button>
+                    <div class="cartNotification"></div>
+                    <p><a class="popup-close-text" data-popup-close="popup-1" href="#">Close</a></p>
+                    <a class="popup-close" data-popup-close="popup-1" href="#">x</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.js"></script>
+    <script src="js/home.js"></script>
+</body>
+
+</html>

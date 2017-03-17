@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="css/cart.css" />
+    <link rel="stylesheet" type="text/css" href="css/home.css" />
+    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap-theme.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title tal:content="page_title">Title Here</title>
+</head>
+
+<body>
+    <div metal:use-macro="/template/nav.xhtml/nav_bar"></div>
+
+    <div class="container" id="cartContainer">
+        <div class="col-sm-12" id="cart-checkout-notice">Be sure to update the individual designers after changing quantity/hour.</div>
+        <table id="cart" class="table table-hover table-condensed">
+            <thead>
+                <tr>
+                    <th style="width:50%">Product</th>
+                    <th style="width:10%">Price</th>
+                    <th style="width:8%">Quantity</th>
+                    <th style="width:22%" class="text-center">Subtotal</th>
+                    <th style="width:10%"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr tal:replace="">
+                    <td data-th="Product">
+                        <div class="row">
+                            <div class="col-sm-2 hidden-xs"><img src="http://placehold.it/100x100" alt="..." class="img-responsive" /></div>
+                            <div class="col-sm-10">
+                                <h4 class="nomargin">Product Name Placeholder</h4>
+                                <p>Product Description Placeholder</p>
+                            </div>
+                        </div>
+                    </td>
+                    <td data-th="Price">$1.99</td>
+                    <td data-th="Quantity">
+                        <input type="number" class="form-control text-center" value="1" />
+                    </td>
+                    <td data-th="Subtotal" class="text-center">1.99</td>
+                    <td class="actions" data-th="">
+                        <button class="btn btn-danger btn-sm cart-delete"><i class="fa fa-trash-o"></i></button>
+                        <button class="btn btn-info btn-sm cart-update"><i class="fa fa-refresh"></i></button>
+                    </td>
+                </tr>
+                <tr tal:replace="">
+                    <td data-th="Product">
+                        <div class="row">
+                            <div class="col-sm-2 hidden-xs"><img src="http://placehold.it/100x100" alt="..." class="img-responsive" /></div>
+                            <div class="col-sm-10">
+                                <h4 class="nomargin">Product Name Placeholder</h4>
+                                <p>Product Description Placeholder</p>
+                            </div>
+                        </div>
+                    </td>
+                    <td data-th="Price">$1.99</td>
+                    <td data-th="Quantity">
+                        <input type="number" class="form-control text-center" value="1" />
+                    </td>
+                    <td data-th="Subtotal" class="text-center">1.99</td>
+                    <td class="actions" data-th="">
+                        <button class="btn btn-danger btn-sm cart-delete"><i class="fa fa-trash-o"></i></button>
+                        <button class="btn btn-info btn-sm cart-update"><i class="fa fa-refresh"></i></button>
+                    </td>
+                </tr>
+            </tbody>
+            <!-- UPDATE THIS -->
+            <tfoot>
+                <tr class="visible-xs">
+                    <td class="text-center"><strong>Total </strong></td>
+                </tr>
+                <tr>
+                    <td><a href="#" class="button btnWarning btn-block" id="cart-reset">Delete Cart</a></td>
+                    <td colspan="2" class="hidden-xs"></td>
+                    <td class="hidden-xs text-center"><strong id="totalPrice">Total </strong></td>
+                    <td><a href="#" class="button btnPrimary btn-block" id="cart-checkout">Checkout</a></td>
+                </tr>
+            </tfoot>
+        </table>
+        <div class="col-sm-12" id="cart-checkout-msg"></div>
+        <div class="col-sm-12" id="cart-checkout-status"></div>
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.js"></script>
+    <script src="js/cart.js"></script>
+</body>
+
+</html>

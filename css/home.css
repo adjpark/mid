@@ -1,0 +1,144 @@
+@charset "utf-8";
+@import url(http://weloveiconfonts.com/api/?family=fontawesome);
+@font-face {
+    font-family: grotesk_light;
+    src: url("../fonts/Grotesk_Light.ttf");
+}
+
+@font-face {
+    font-family: grotesk_medium;
+    src: url("../fonts/Grotesk_Medium.ttf");
+}
+
+body{
+    font-family: grotesk_light;
+}
+
+.navbar-brand {
+    padding: 0px;
+}
+
+.navbar-brand>img {
+    height: 100%;
+    padding: 0px;
+    width: auto;
+}
+
+.topNavbar .navbar-brand {
+    height: 90px;
+}
+
+.topNavbar .nav>li>a {
+    padding-top: 35px;
+    padding-bottom: 35px;
+}
+
+.topNavbar .navbar-toggle {
+    padding: 10px;
+    margin: 25px 15px 25px 0;
+}
+
+.profilePic {
+    width: 100%;
+}
+
+.workPic {
+    position: relative;
+    width: 50%;
+    height: auto;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-right: 10px;
+    padding-bottom: 10px;
+}
+
+.cartNotification {
+    color: red;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.popup {
+    width: 100%;
+    height: 100%;
+    display: none;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    background: rgba(0, 0, 0, 0.75);
+    z-index: 99;
+}
+
+.popup-inner {
+    max-width: 700px;
+    width: 90%;
+    padding: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 1);
+    border-radius: 3px;
+    background: #fff;
+    z-index: 100;
+}
+
+.popup-close {
+    width: 30px;
+    height: 30px;
+    padding-top: 4px;
+    display: inline-block;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    transition: ease 0.25s all;
+    -webkit-transform: translate(50%, -50%);
+    transform: translate(50%, -50%);
+    border-radius: 1000px;
+    background: rgba(0, 0, 0, 0.8);
+    font-family: Arial, Sans-Serif;
+    font-size: 20px;
+    text-align: center;
+    line-height: 100%;
+    color: #fff;
+}
+
+.popup-close:hover {
+    -webkit-transform: translate(50%, -50%) rotate(180deg);
+    transform: translate(50%, -50%) rotate(180deg);
+    background: rgba(0, 0, 0, 1);
+    text-decoration: none;
+}
+
+.button {
+    display: inline-block;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    text-decoration: none;
+    text-align: center;
+    border: 3px solid;
+    padding: 13px 85px;
+}
+
+.button:hover {
+    -webkit-transition: 200ms ease-in;
+    -moz-transition: 200ms ease-in;
+    -o-transition: 200ms ease-in;
+    transition: 200ms ease-in;
+    text-decoration: none;
+}
+
+.btnPrimary {
+    background-color: rgb(52, 168, 200);
+    border-color: rgb(52, 168, 200);
+    color: rgb(255, 255, 255);
+}
+
+.btnPrimary:hover {
+    background-color: rgba(255, 255, 255, 0);
+    border-color: rgb(52, 168, 200);
+    color: rgb(52, 168, 200);
+}

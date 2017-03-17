@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap-theme.css" />
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title tal:content="page_title">Title Here</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="jumbotron">
+            <div class="row">
+                <img id="landingLogo" src="img/logo.png" />
+            </div>
+            <hr/>
+            <div id="registerFade">
+                <div class="row">
+                    <h2 id="slogan">Hire the best interior Designers!</h2>
+                </div>
+                <div class="row" id="loginOpt">
+                    <button id="adminLogIn" type="button">Admin Login</button>
+                    <br/>
+                    <a href="home.php"><button  id="continue" type="button">Continue to site</button></a>
+                </div>
+
+                <div id="loginDiv" class="formStyle">
+                    <form action=" " method="post" id="contact_form">
+                        <h3>Admin Panel Login</h3>
+                        <span class="fontawesome-user"></span>
+                        <input name="adminE" placeholder="Enter your email here" class="" type="email" required="required" />
+                        <span class="fontawesome-user"></span>
+                        <input name="adminP" placeholder="Enter your password here" id="adminP" type="password" required="required" />
+                        <input type="submit" class="" name="btn-login" value="Login" />
+                        <input type="button" id="regButton" class="" value="Register" />
+                    </form>
+                </div>
+            </div>
+            <div id="registerDiv" class="formStyle">
+                <form action="" method="post" id="contact_form">
+                    <h3>Admin Panel Register</h3>
+                    <span class="fontawesome-user"></span>
+                    <input name="registerFNAME" placeholder="Enter your first name" class="" type="text" required="required" />
+                    <span class="fontawesome-user"></span>
+                    <span class="fontawesome-user"></span>
+                    <input name="registerLNAME" placeholder="Enter your last name" class="" type="text" required="required" />
+                    <span class="fontawesome-user"></span>
+                    <span class="fontawesome-user"></span>
+                    <input name="registerEMAIL" placeholder="Enter your email" class="" type="email" required="required" />
+                    <span class="fontawesome-user"></span>
+                    <span class="fontawesome-user"></span>
+                    <input name="registerPASS" placeholder="Enter your password" id="" type="password" required="required" />
+                    <span class="fontawesome-user"></span>
+                    <input placeholder="Confirm your password" id="" type="password" required="required" />
+                    <input type="submit" class="" name="btn-register" value="Submit" />
+                    <input type="reset" id="resetBut" class="" value="Reset" />
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.js"></script>
+    <script src="js/index.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,223 @@
+@font-face {
+    font-family: grotesk_light;
+    src: url("../fonts/Grotesk_Light.ttf");
+}
+@font-face {
+    font-family: grotesk_medium;
+    src: url("../fonts/Grotesk_Medium.ttf");
+}
+
+body{
+    font-family: grotesk_light;
+}
+
+.row{
+    margin-left:0px;
+    margin-right:0px;
+}
+#wrapper {
+    padding-left: 70px;
+    transition: all .4s ease 0s;
+    height: 100%
+}
+#sidebar-wrapper {
+    margin-left: -150px;
+    left: 70px;
+    width: 150px;
+    background: #222;
+    position: fixed;
+    height: 100%;
+    z-index: 10000;
+    transition: all .4s ease 0s;
+}
+.sidebar-nav {
+    display: block;
+    float: left;
+    width: 150px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+#page-content-wrapper {
+    padding-left: 0;
+    margin-left: 0;
+    width: 100%;
+    height: auto;
+}
+#wrapper.active {
+    padding-left: 150px;
+}
+#wrapper.active #sidebar-wrapper {
+    left: 150px;
+}
+#page-content-wrapper {
+  width: 100%;
+}
+#sidebar_menu li a, .sidebar-nav li a {
+    color: #999;
+    display: block;
+    float: left;
+    text-decoration: none;
+    width: 150px;
+    background: #252525;
+    border-top: 1px solid #373737;
+    border-bottom: 1px solid #1A1A1A;
+    -webkit-transition: background .5s;
+    -moz-transition: background .5s;
+    -o-transition: background .5s;
+    -ms-transition: background .5s;
+    transition: background .5s;
+}
+.sidebar_name {
+    padding-top: 25px;
+    color: #fff;
+    opacity: .7;
+}
+.sidebar-nav li {
+  line-height: 40px;
+  text-indent: 20px;
+}
+.sidebar-nav li a {
+  color: #999999;
+  display: block;
+  text-decoration: none;
+}
+.sidebar-nav li a:hover {
+  color: #fff;
+  background: rgba(255,255,255,0.2);
+  text-decoration: none;
+}
+.sidebar-nav li a:active,
+.sidebar-nav li a:focus {
+  text-decoration: none;
+}
+.sidebar-nav > .sidebar-brand {
+  height: 65px;
+  line-height: 60px;
+  font-size: 18px;
+}
+.sidebar-nav > .sidebar-brand a {
+  color: #999999;
+}
+.sidebar-nav > .sidebar-brand a:hover {
+  color: #fff;
+  background: none;
+}
+
+#main_icon
+{
+   float:right;
+   padding-right: 25px;
+   padding-top: 20px;
+}
+.sub_icon
+{
+   float:right;
+   padding-right: 25px;
+   padding-top: 10px;
+}
+
+@media (max-width:767px) {
+    #wrapper {
+        padding-left: 70px;
+        transition: all .4s ease 0s;
+    }
+    #sidebar-wrapper {
+        left: 70px;
+    }
+    #wrapper.active {
+        padding-left: 150px;
+    }
+    #wrapper.active #sidebar-wrapper {
+        left: 150px;
+        width: 150px;
+        transition: all .4s ease 0s;
+    }
+}
+
+#adminTitle{
+    text-align: center;
+    font-family: grotesk_light;
+    margin-top: 50px;
+    margin-bottom: 25px;
+}
+
+.row h3{
+    font-family: grotesk_medium;
+}
+
+table img{
+    width: 100px;
+    height: 100px;
+    padding : 5px 5px 5px 5px;
+}
+
+.hour-reset-notice {
+    font-size: 12px;
+    text-align: center;
+    color: red;
+    max-width: 200px;
+    margin: 0 auto;
+}
+
+.editDesigner, .deleteDesigner, .resetHour{
+    width:100%;
+    margin-bottom: 5px;
+    border: 0px;
+    background-color: rgb(52, 168, 200);
+    color: rgb(255, 255, 255);
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.panel-heading{
+    text-align: center;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.panel{
+    border: 0px !important;
+    box-shadow: 0 0 0px rgba(0, 0, 0, .05) !important;
+}
+
+.panel-default > .panel-heading {
+    border: 0px !important;
+}
+
+label{
+    margin-top: 10px;
+    font-weight: 300 !important;
+}
+
+.button {
+    display: inline-block;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    text-decoration: none;
+    text-align: center;
+    border: 3px solid;
+    padding: 13px 85px;
+}
+
+.button:hover {
+    -webkit-transition: 200ms ease-in;
+    -moz-transition: 200ms ease-in;
+    -o-transition: 200ms ease-in;
+    transition: 200ms ease-in;
+    text-decoration: none;
+}
+
+.btnPrimary {
+    background-color: rgb(52, 168, 200);
+    border-color: rgb(52, 168, 200);
+    color: rgb(255, 255, 255);
+}
+
+.btnPrimary:hover {
+    background-color: rgba(255, 255, 255, 0);
+    border-color: rgb(52, 168, 200);
+    color: rgb(52, 168, 200);
+}
+

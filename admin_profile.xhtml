@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="css/admin.css" />
+    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap-theme.css" />
+    <link rel="stylesheet" href="vendor/ionicons/css/ionicons.css" />
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title tal:content="page_title">Title Here</title>
+</head>
+
+<body>
+    <div id="wrapper">
+        <div id="sidebar-wrapper" metal:use-macro="/template/adminnav.xhtml/admin_nav"></div>
+        <div id="page-content-wrapper">
+            <div class="page-content">
+                <div class="container">
+                    <div class="row">
+                        <h1 class="" id="adminTitle">Welcome to the admin panel <span tal:content="adminInfo/adminFName">Name</span>.</h1>
+                        <br/>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">Current Profile Information</div>
+
+                                <label>First Name:</label>
+                                <p tal:content="adminInfo/adminFName">TEMP FIRST NAME</p>
+                                <br/>
+                                <label>Last Name:</label>
+                                <p tal:content="adminInfo/adminLName">TEMP LAST NAME</p>
+                                <br/>
+                                <label>Email: </label>
+                                <p tal:content="adminInfo/adminEmail">TEMP EMAIL</p>
+                                <br/>
+                            </div>
+                        </div>
+
+                        <!--RIGHT SIDE CONTENT -->
+                        <div class="col-md-6">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">Update Profile Information</div>
+                                <form method="post" id="profile_change">
+                                    <label>New First Name:</label><input placeholder="Enter your first name" type="text" name="newFname"  class="form-control" required="required"/>
+                                    <br/>
+                                    <label>New Last Name:</label><input placeholder="Enter your last name" type="text" name="newLname"  class="form-control" required="required"/>
+                                    <br/>
+                                    <label>New Email:</label><input placeholder="Enter your new email" type="email" name="newEmail"  class="form-control" required="required"/>
+                                    <br/>
+                                    <label>New password:</label><input placeholder="Enter your new password" type="password" name="newPass"  class="form-control" required="required"/>
+                                    <br/>
+                                    <label>Confirm New Password:</label><input placeholder="Confirm your new password" type="password" name="confirmPass"  class="form-control" required="required"/>
+                                    <br/>
+                                    <label>Old Password:</label><input placeholder="Enter your old password" type="password" name="oldPass"  class="form-control" required="required"/>
+                                    <br/>
+                                    <button type="submit" value="submit" name="btn-update" class="button btnPrimary">Update</button>
+                                    <button type="reset" value="reset" class="button btnPrimary">Reset</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.js"></script>
+    <script src="vendor/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="vendor/datatables-plugins/dataTables.bootstrap.min.js"></script>
+    <script src="vendor/datatables-responsive/dataTables.responsive.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+
+</html>
