@@ -1,2 +1,2 @@
 # mid
-BCIT D3 Group web development project
+BCIT Digital Design and Development Project - My Interior Designer
