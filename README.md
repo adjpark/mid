@@ -1,2 +1,2 @@
-# mid
-BCIT Digital Design and Development Project - My Interior Designer
+# My Interior Designer
+Group Term 4 Project
